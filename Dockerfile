@@ -71,7 +71,9 @@ RUN asdf exec direnv allow
 
 RUN pip3 install "ansible==${ANSIBLE_VERSION}"
 COPY --from=furyagent /usr/bin/furyagent /usr/local/bin/furyagent
-RUN curl -sSL https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh -o /tmp/oci-cli-install.sh && chmod +x /tmp/oci-cli-install.sh && /tmp/oci-cli-install.sh --accept-all-defaults && rm /tmp/oci-cli-install.sh
+RUN curl -sSL https://raw.githubusercontent.com/oracle/oci-cli/master/scripts/install/install.sh -o /tmp/oci-cli-install.sh && chmod +x /tmp/oci-cli-install.sh && /tmp/oci-cli-install.sh --accept-all-defaults --install-dir $HOME/.local --update-path-and-enable-tab-completion && rm /tmp/oci-cli-install.sh
+
+ENV PATH=$PATH:$HOME/.local/bin
 
 ENTRYPOINT [ "zsh" ]
 
