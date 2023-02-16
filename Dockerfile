@@ -45,6 +45,9 @@ WORKDIR $HOME
 
 # Install oh my zsh
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 COPY --chown=$UID:$GID .zshrc $HOME/.zshrc
 # Install asdf
 RUN git clone https://github.com/asdf-vm/asdf.git $HOME/.asdf --branch $ASDF_VERSION
