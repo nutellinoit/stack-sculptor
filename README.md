@@ -32,7 +32,6 @@ Features:
   - [ ] zsh + oh-my-zsh
   - [ ] kubectx
   - [ ] vim/neovim
-  - [ ] java (jre)
 - [ ] Precustomized prompt with kubernetes context
 - [ ] Match uid with host
 - [ ] Mount your own source code

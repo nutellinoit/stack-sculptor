@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  stack-sculptor:
+    platform: linux/amd64
+    image: sighupio/stack-sculptor
+    # TBD
+    hostname: toolbox-$USER
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER: $USER
+    network_mode: host
+    tty: true
+    

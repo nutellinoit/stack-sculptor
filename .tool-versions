@@ -1,0 +1,4 @@
+direnv 2.28.0                                                                                                                                                      
+terraform 1.0.7                                                                                                                                                    
+kustomize 3.5.3                                                                                                                                                     
+kubectl 1.20.2 

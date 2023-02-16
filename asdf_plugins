@@ -1,0 +1,15 @@
+jq
+yq
+kustomize
+kubectl
+helm
+helmfile
+terraform
+deck
+furyctl
+tflint
+direnv
+awscli
+gcloud
+k9s
+stern
