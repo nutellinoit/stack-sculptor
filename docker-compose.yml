@@ -4,7 +4,6 @@ services:
   stack-sculptor:
     platform: linux/amd64
     image: sighupio/stack-sculptor
-    # TBD
     hostname: toolbox-$USER
     build:
       context: .
@@ -13,4 +12,9 @@ services:
         USER: $USER
     network_mode: host
     tty: true
-    
+    volumes:
+      - ${REPODIR:-.}:/src
+      - $HOME/.ssh:/home/sighup/.ssh
+      - $HOME/.aws:/home/sighup/.aws
+    working_dir: /src
+    #user: "0"
