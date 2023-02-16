@@ -28,7 +28,6 @@ RUN apt install -y \
     gpg \
     zsh \
     vim \
-    neovim \
     curl \
     unzip \
     gzip \
